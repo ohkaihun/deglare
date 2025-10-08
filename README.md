@@ -32,9 +32,9 @@ Next, we expect glare image folder with Intensity table around the point light s
 <location>
 |---curve_fit（For pipe_prepare_simulatedataset_light.py & pipe_preparedataset_light.py ）
     |---images
-   	|---cam000.png
+    	|---cam000.png
     	|---cam001.png
-   	|---...
+    	|---...
     |---light_curve_simulate
 ```
 ## Try to run 
@@ -47,4 +47,16 @@ then use script to do glare mitigation for synthetic scene(pipe_prepare_simulate
 python pipe_preparedataset_light.py
 ```
 ## Gaussian Splatting with mask
+We expect the gs scene following data structure like this:
+```
+<location>
+|---scene_name（For pipe_prepare_simulatedataset_light.py & pipe_preparedataset_light.py ）
+    |---images
+    	|---cam000.png
+    	|---cam001.png
+    	|---...
+    |---masks/mask_large
+    |---sparse
+	|---0
+```
 
