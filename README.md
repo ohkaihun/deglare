@@ -57,7 +57,8 @@ We expect the gs scene following data structure like this:
     |---sparse
 	|---0
 ```
-Train GS with the script trian.py, where model_path( A_B_C --->A:FULL point_cloud or not/B:FULL input_image or not/C:Use mask or not)
+Train GS with the script trian.py. We did not modify the reading method of the datasetloader; instead, we added a method to read the mask in the train script.
+Please note that the form of  model_path( A_B_C --->A:FULL point_cloud or not/B:FULL input_image or not/C:Use mask or not)
 ```shell
 python gs/train.py  -s  path/to/your/scene/name   --images  images --save_iterations 30_000 --checkpoint_iterations 30_000 --model_path output\scene_name\FUL_FUL_YES 
 ```
