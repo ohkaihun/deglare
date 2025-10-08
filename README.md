@@ -62,7 +62,7 @@ Please note that the form of  model_path( A_B_C --->A:FULL point_cloud or not/B:
 ```shell
 python gs/train.py  -s  path/to/your/scene/name   --images  images --save_iterations 30_000 --checkpoint_iterations 30_000 --model_path output\scene_name\FUL_FUL_YES 
 ```
-Render GS with the script render.py, where model_path( A_B_C --->A:FULL point_cloud or not/B:FULL IMAGE or not/C:Use mask or not)
+Render GS with the script render.py
 ```shell
 python gs/render.py  -s  path/to/your/scene/name  --images  images  --model_path  output\scene_name\FUL_FUL_YES
 ```
