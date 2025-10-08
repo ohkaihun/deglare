@@ -30,15 +30,15 @@ To simulate light source with synthetic data, our repository first expect the fo
 Next, we expect glare image folder with Intensity table around the point light source should follow the dataset structure in the source path location:
 ```
 <location>
-|---curve_fit（For pipe_prepare_simulatedataset_light.py & pipe_preparedataset_light.py ）
+|---curve_fit  ( For pipe_prepare_simulatedataset_light.py & pipe_preparedataset_light.py )
     |---images
     	|---cam000.png
     	|---cam001.png
     	|---...
     |---light_curve_simulate
 ```
-## Try to run 
-Run Spectrum Simulation in 1 step.  You may specify the location path and output path.
+## Try to run  Spectrum Simulation
+Run Spectrum Simulation: You may specify the location path and output path.
 ```shell
 python spectrum_blender.py  
 ```
@@ -50,8 +50,8 @@ python pipe_preparedataset_light.py
 We expect the gs scene following data structure like this:
 ```
 <location>
-|---scene_name（For pipe_prepare_simulatedataset_light.py & pipe_preparedataset_light.py ）
-    |---images
+|---scene_name
+    |---images/images_DEL
     	|---cam000.png
     	|---cam001.png
     	|---...
@@ -59,4 +59,11 @@ We expect the gs scene following data structure like this:
     |---sparse
 	|---0
 ```
-
+Train GS with the script trian.py, where model_path( A_B_C --->A:FULL point_cloud or not/B:FULL IMAGE or not/C:Use mask or not)
+```shell
+python gs/train.py  -s  path/to/your/scene/name   --images  images --save_iterations 30_000 --checkpoint_iterations 30_000 --model_path output\scene_name\FUL_FUL_YES 
+```
+Render GS with the script render.py, where model_path( A_B_C --->A:FULL point_cloud or not/B:FULL IMAGE or not/C:Use mask or not)
+```shell
+python gs/render.py  -s  path/to/your/scene/name  --images  images  --model_path  output\scene_name\FUL_FUL_YES
+```
